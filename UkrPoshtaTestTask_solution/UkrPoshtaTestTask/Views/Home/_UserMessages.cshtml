@@ -1,0 +1,21 @@
+﻿@model IEnumerable<IGrouping<string, UkrPoshtaTestTask.Models.Message>>
+<div style="display:none; border:1px solid lightblue; border-radius:5px; text-align:left" id="userMessagesView">
+    @foreach (var users in Model)
+    {
+        var user = users.Key;
+        <div class="item">
+            <a href="#" class="read_more">@user</a>
+            @foreach (var message in users)
+            {
+            <ul class="more_text" style="display:none">
+                <li>@message.Body</li>
+            </ul>
+            }
+        </div>
+    }
+</div>
+
+
+
+
+

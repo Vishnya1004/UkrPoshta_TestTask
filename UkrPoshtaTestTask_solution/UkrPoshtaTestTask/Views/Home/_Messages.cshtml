@@ -1,0 +1,16 @@
+﻿@model UkrPoshtaTestTask.Models.MessagesStore
+
+<div style="display:none; border:1px solid lightblue; border-radius:5px; text-align:left" id="messagesView">
+   
+    @foreach (var message in Model.Messages)
+    {
+        <ul>
+            <li>Id - @message.Id</li>
+            <li>User - @message.User.Name</li>
+            <li>Text - @message.Body</li>
+            <li>Date - @message.Date</li>
+        </ul>
+        <br />
+    }
+</div>
+

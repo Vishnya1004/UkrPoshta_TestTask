@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("CreateMessage", "Home"))
+{
+    <div class="input-group">
+        <span class="input-group-addon">User Name</span>
+        @Html.TextBox("userName", null, new { @class = "form-control" })
+   </div>
+   <br />
+    <div class="input-group">
+        <span class="input-group-addon">Message text</span>
+        @Html.TextBox("messageBody", null, new { @class = "form-control" })
+    </div>
+    <br />
+    <input type="submit" value="Send message" class="btn btn-primary"/>
+}
+<br />
+        @*@if (ViewBag.showMessagesNow)
+            {
+                @Html.Action("ShowMessages")
+            }
+            @Html.ActionLink("ShowMessagesNow", "Index2")*@
+
+        <div style="float:left; width:50%; text-align:center">
+            <input type="button" value="SHOW All messages" id="showAllMessages" class="btn btn-inf" />
+            @Html.Action("ShowAllMessages")
+        </div>
+
+        <div style="float:left; width:50%; text-align:center">
+            <input type="button" value="SHOW users messanges" id="showUserMessangers" class="btn btn-inf" />
+            @Html.Action("GroupMessagesByUsers")
+        </div>
+
+
+
+
+
+
